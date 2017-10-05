@@ -1,0 +1,19 @@
+.card {
+}
+
+div.card {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  -webkit-clip-path: inset(76px 50px round 15px);
+  clip-path: inset(76px 50px round 15px);
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: left;
+  height: 600px;
+  transition-duration: 0.7s;
+  transition-timing-function: ease-out;
+  transition-property: all;
+  width: 400px;
+}
