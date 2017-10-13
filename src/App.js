@@ -12,6 +12,7 @@ class App extends Component {
     flipped: false,
     rotation: 0,
     cardsSeen: [],
+    notice: ''
   }
 
   flipCard = () => {
@@ -21,24 +22,37 @@ class App extends Component {
   }
 
   handleCardSelect = (e) => {
+    let notice = '';
     const type = e.target.innerText;
-    const cardNum = randomFromFifty();
     const flipped = false;
     const rotation = this.state.rotation === 0 ? 360 : 0;
+    let cardNum = randomFromFifty();
+    let counter = 0;
+    if (this.state.cardsSeen.filter(card => card.startsWith(type)).length >= 50) {
+      notice = `You went through all of the ${type} cards! Try another subject.`
+    } else {
+      while (this.state.cardsSeen.includes(`${type}${cardNum}`)) {
+        if (counter > 50) break;
+        cardNum = randomFromFifty();
+        counter++
+      }
+    }
     const newState = update(this.state,
       {
         type:      { $set: type },
         cardNum:   { $set: cardNum },
         flipped:   { $set: flipped },
         rotation:  { $set: rotation },
-        cardsSeen: { $push: [`${type}${cardNum}`]}
+        cardsSeen: { $push: [`${type}${cardNum}`]},
+        notice:    { $set: notice }
       });
     this.setState(newState);
   }
 
   componentWillMount() {
     const type = ['CSS', 'JS', 'HTML', 'Ruby'][Math.floor(Math.random() * 4)]
-    const cardNum = randomFromFifty();
+    let cardNum = randomFromFifty();
+
     const newState = update(this.state,
       {
         type:      { $set: type },
@@ -50,33 +64,37 @@ class App extends Component {
 
   render() {
 
-    const { flipped, cardNum, type, rotation } = this.state
-
+    const { flipped, cardNum, type, rotation, notice } = this.state
+    console.log(this.state.cardsSeen.sort());
     return (
       <div className={"App " + type}>
-        <h1 className={flipped ? 'flipped' : null } >{type}</h1>
-        { cardNum > 0 ? (
-            <Card
-              type={type}
-              cardNum={cardNum}
-              flipped={flipped}
-              rotation={rotation}
-              onClick={this.flipCard}
-            />
-      ) : undefined }
-        <div className="btn-group">
-          <button
-            onClick={this.handleCardSelect}
-          ><span className="long-shadow">CSS</span></button>
-          <button
-            onClick={this.handleCardSelect}
-          ><span className="long-shadow">HTML</span></button>
-          <button
-            onClick={this.handleCardSelect}
-          ><span className="long-shadow">JS</span></button>
-          <button
-            onClick={this.handleCardSelect}
-          ><span className="long-shadow">Ruby</span></button>
+        <p className={notice ? 'notice' : ''}>{notice}</p>
+        <div className="container">
+          <h1 className={flipped ? 'flipped' : null } >{type}</h1>
+          { cardNum > 0 ? (
+              <Card
+                type={type}
+                cardNum={cardNum}
+                flipped={flipped}
+                rotation={rotation}
+                onClick={this.flipCard}
+              />
+        ) : undefined }
+          <div className="btn-group">
+            <button onClick={this.handleCardSelect} >
+              <span className="long-shadow">CSS</span>
+            </button>
+            <button
+              onClick={this.handleCardSelect} >
+              <span className="long-shadow">HTML</span>
+            </button>
+            <button onClick={this.handleCardSelect} >
+              <span className="long-shadow">JS</span>
+            </button>
+            <button onClick={this.handleCardSelect} >
+              <span className="long-shadow">Ruby</span>
+            </button>
+          </div>
         </div>
       </div>
     );

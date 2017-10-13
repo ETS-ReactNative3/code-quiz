@@ -9,9 +9,9 @@ export default ({ cardNum, type, flipped, rotation, onClick }) => {
 
 
   if (flipped) {
-    style.backgroundImage = `url(/assets/${type}/${type}_A${cardNum}.png)`
+    style.backgroundImage = `url(assets/${type}/${type}_A${cardNum}.png)`
   } else {
-    style.backgroundImage = `url(/assets/${type}/${type}_Q${cardNum}.png)`
+    style.backgroundImage = `url(assets/${type}/${type}_Q${cardNum}.png)`
   }
 
   style.transform = 'rotateY(' + rotation + 'deg)';
