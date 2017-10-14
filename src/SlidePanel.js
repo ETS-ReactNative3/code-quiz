@@ -23,7 +23,7 @@ export default () => {
         <p>Card assets by <a href="http://codecards.io/">codecards.io</a> are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons by 4.0</a>. Check out the source code and contribute <a href="https://github.com/BeejLuig/code-cards-game">here</a></p>
         <p>
           <small>
-            Made with <span class="heart">♥</span> by <a href="/">BJ Cantlupe</a>.
+            Made with <span className="heart">♥</span> by <a href="/">BJ Cantlupe</a>.
           </small>
         </p>
       </article>
