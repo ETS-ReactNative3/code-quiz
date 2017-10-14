@@ -19,7 +19,7 @@ export default () => {
         <i className="fa fa-2x fa-info-circle" aria-hidden="true"></i>
       </a>
       <article className="slide-content">
-        <h1>Code Cards Game</h1>
+        <h1>Code Quiz</h1>
         <p>Card assets by <a href="http://codecards.io/">codecards.io</a> are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons by 4.0</a>. Check out the source code and contribute <a href="https://github.com/BeejLuig/code-cards-game">here</a></p>
         <p>
           <small>
