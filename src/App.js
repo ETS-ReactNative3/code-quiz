@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import update from 'immutability-helper';
 import Card from './Card.js';
+import SlidePanel from './SlidePanel.js';
 import { randomFromFifty } from './helpers.js'
 import './App.css';
 
@@ -69,6 +70,7 @@ class App extends Component {
     return (
       <div className={"App " + type}>
         <p className={notice ? 'notice' : ''}>{notice}</p>
+        <SlidePanel />
         <div className="container">
           <h1 className={flipped ? 'flipped' : null } >{type}</h1>
           { cardNum > 0 ? (

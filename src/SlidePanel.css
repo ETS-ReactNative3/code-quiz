@@ -1,0 +1,47 @@
+.fa-info-circle.fa-2x {
+    font-size: 1.7em;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.slide-panel {
+  top: calc(50vh - 175px);
+  left: 0;
+  position: absolute;
+  height: 250px;
+  width: 500px;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 10;
+  transform: translateX(-501px);
+  transition: transform 1s ease;
+  border-radius: 8px;
+}
+
+.slide-tab {
+  position: fixed;
+  width: 40px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.5);
+  top: 75px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(50, 50, 50, 0.6);
+  right: -40px;
+  padding: 35px 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: 0.3s right ease;
+}
+
+.slide-out {
+  transform: translateX(0);
+}
+
+.slide-content > h1 {
+  margin: 0;
+  margin-top: 1em 0;
+}
+
+.slide-content > p {
+  margin: 1em;
+  line-height: 1.5em;
+}
