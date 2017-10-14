@@ -1,4 +1,4 @@
-# Code Cards Game
+# Code Quiz
 
 A little programming trivia game using assets from [codecards.io](http://www.codecards.io/).
 
