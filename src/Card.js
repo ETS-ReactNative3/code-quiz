@@ -6,8 +6,6 @@ export default ({ cardNum, type, flipped, rotation, onClick }) => {
     backgroundImage: ''
   };
 
-
-
   if (flipped) {
     style.backgroundImage = `url(assets/${type}/${type}_A${cardNum}.png)`
   } else {

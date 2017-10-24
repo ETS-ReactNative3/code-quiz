@@ -16,4 +16,5 @@ div.card {
   transition-timing-function: ease-out;
   transition-property: all;
   width: 400px;
+  cursor: pointer;
 }

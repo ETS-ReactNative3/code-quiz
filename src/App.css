@@ -11,26 +11,26 @@ h1 {
 }
 
 button {
-    align-items: flex-start;
-    text-align: center;
-    border: 1px solid gray;
-    -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
-    cursor: default;
-    color: black;
-    font-weight: bold;
-    background-color: white;
-    box-sizing: border-box;
-    margin: 0 5px;
-    padding: 0;
-    overflow: hidden;
-    border-radius: 100%;
-    height: 70px;
-    width: 70px;
-    border: none;
-    font-size: 1.2em;
-    transition: all 0.3s ease;
-
+  align-items: flex-start;
+  text-align: center;
+  border: 1px solid gray;
+  -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+  cursor: default;
+  color: black;
+  font-weight: bold;
+  background-color: white;
+  box-sizing: border-box;
+  margin: 0 5px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 100%;
+  height: 70px;
+  width: 70px;
+  border: none;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 button:focus, button:disabled {
