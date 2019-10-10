@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://beejluig.github.io/code-quiz",
   "dependencies": {
-    "gh-pages": "^1.0.0",
+    "gh-pages": "^2.1.1",
     "immutability-helper": "^3.0.1",
     "react": "^16.10.2",
     "react-dom": "^15.6.1"
